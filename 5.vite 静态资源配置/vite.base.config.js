@@ -12,7 +12,8 @@ export default defineConfig({
     optimizeDeps:{
         include:["lodash-es","lodash"]
     },
-    envPrefix:"YEMOMO_",//设定前缀，解除vite对变量的拦截。环境变量前面需要配置此前缀
+    envPrefix:"YEMOMO_",//设定前缀，解除vite对变量的拦截。环境变量前面需要配置此前缀\
+    //css配置,分为css模块配置，css预处理器，css后处理器postcss
     css:{
         modules:{
             localsConvention:"dashes",//设置为驼峰式命名，css代码中module的footer-content属性变成了footerContent属性，only表示对象其属性只有驼峰式命名
@@ -45,5 +46,18 @@ export default defineConfig({
         postcss:{
             plugins:[postcssPresetEnv]
         }
+    },
+    //配置生产环境配置
+    build:{
+        //vite的打包为了兼容性交给了rollup配置，可以在这里设置rollup的配置，具体可以看官方文档
+        rollupOptions:{
+            output:{
+                assetFileNames:"[hash].[name].[ext]",
+                //，，，其他属性可以看文档
+            }
+        },
+        assetsInlineLimit:4096,//默认4096 =>4kb  表示小于4kb的图片将会被加载为base64格式写在html格式中
+        outDir:"dist",//输出的打包文件名称
+        assetsDir:"static",//输出的静态资源的名称
     }
 })
