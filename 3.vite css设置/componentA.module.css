@@ -1,0 +1,16 @@
+
+.footer{
+    width:100px;
+    height:200px;
+    background-color:var(--globalColor);
+}
+.footer-content{
+    width:100px;
+    height:300px;
+    background-color:blue;
+}
+.cs-content{
+    /*css新设置吗，支持设置最大px，最小px以及一般情况下根据浏览器视口宽度的百分比*/
+    width:clamp(200px,30%,100px);
+    /*通过postcss“后处理器”处理后,返回降级结果为:width:max(200px,min(30%,100px))*/
+}

@@ -1,0 +1,7 @@
+:root{
+  --mainColor:red
+}
+body{
+  backgrond-color:red;/*此时postcss根据装的预设，进行了语法降级等一系列操作*/
+  backgrond-color:var(--mainColor)
+}
