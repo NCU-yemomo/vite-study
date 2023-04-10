@@ -59,5 +59,5 @@ export default defineConfig({
         assetsInlineLimit:4096,//默认4096 =>4kb  表示小于4kb的图片将会被加载为base64格式写在html格式中
         outDir:"dist",//输出的打包文件名称
         assetsDir:"static",//输出的静态资源的名称
-    }
+        }
 })
