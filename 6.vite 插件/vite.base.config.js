@@ -1,12 +1,15 @@
 import { defineConfig } from "vite";
-import {ViteAliases} from "vite-aliases";
+
 import postcssPresetEnv from "postcss-preset-env"
+
 import MyViteAliases from "./plugins/MyViteAliases.js";
 import CreateHtmlPlugin from "./plugins/CreateHtmlPlugin.js"
+import MyviteServer from "./plugins/MyviteServer.js";
 
 import {viteMockServe} from "vite-plugin-mock";
-
+import {ViteAliases} from "vite-aliases";
 import {createHtmlPlugin} from "vite-plugin-html";
+import commonjs from "vite-plugin-commonjs";
 
 export default defineConfig({
     optimizeDeps:{
@@ -77,6 +80,6 @@ export default defineConfig({
                 }
             }
         }),
-        viteMockServe()
+        MyviteServer(),
     ]
 })

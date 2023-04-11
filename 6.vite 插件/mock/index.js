@@ -7,7 +7,7 @@ const userData=mockjs.mock({
         time:"@time"
     }]
 })
-module.exports =  [
+export default  [
     {
         method:"get",
         url:"/api/userlist",
